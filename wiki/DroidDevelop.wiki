@@ -1,3 +1,5 @@
+[http://en.assoft.ru/droiddevelop http://ru.assoft.ru/_/rsrc/1322812520415/android/PQAAAEH1A0dSSDozSYFi-OowCBkusGVpBI3K6KrfPQMY5YpugB8lsj_r12J33Elsh2h3ZE0N6ou8FmbbQulotyEHGdIAzfqVaeb5fcOMdQOFm-SJop2VSMqqRYw9.png.1322812520332.png?height=200&width=200]
+
 DroidDevelop is a tool for onboard android programming. 
 
 For this tool works you should install JavaIDEDroid program for compile your Java program and OI FileManager for choose program files.
@@ -11,4 +13,5 @@ You also can edit your java or another project files without exit from DroidDeve
 You can also see DroidDevelopPro with syntax Highlight.
 
 [https://market.android.com/details?id=com.assoft.DroidDevelop DroidDevelop download link]
+
 [https://market.android.com/details?id=com.assoft.DroidDevelopPro DroidDevelopPro download link]
