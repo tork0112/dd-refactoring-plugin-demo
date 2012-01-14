@@ -1,0 +1,14 @@
+DroidDevelop is a tool for onboard android programming. 
+
+For this tool works you should install JavaIDEDroid program for compile your Java program and OI FileManager for choose program files.
+
+JavaIDEDroid use bsh scripts for programs compilation. On the DroidDevelop you can choose bsh script for compilation by "Open Project..." command. For compile you should press compile button.
+
+You also can install and your run programm without exit from DroidDevelop. For this purpose you can press "Run..." button.
+
+You also can edit your java or another project files without exit from DroidDevelop.
+
+You can also see DroidDevelopPro with syntax Highlight.
+
+[https://market.android.com/details?id=com.assoft.DroidDevelop DroidDevelop]
+[https://market.android.com/details?id=com.assoft.DroidDevelopPro DroidDevelopPro]
