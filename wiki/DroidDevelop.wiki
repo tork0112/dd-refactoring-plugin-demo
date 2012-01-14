@@ -10,5 +10,5 @@ You also can edit your java or another project files without exit from DroidDeve
 
 You can also see DroidDevelopPro with syntax Highlight.
 
-[https://market.android.com/details?id=com.assoft.DroidDevelop DroidDevelop]
-[https://market.android.com/details?id=com.assoft.DroidDevelopPro DroidDevelopPro]
+[https://market.android.com/details?id=com.assoft.DroidDevelop DroidDevelop download link]
+[https://market.android.com/details?id=com.assoft.DroidDevelopPro DroidDevelopPro download link]
