@@ -1,0 +1,85 @@
+// BeanShell compile script
+//	
+name = "DDNewProjectPluginExample";
+packageName="com.assoft";
+
+scriptPath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
+scriptPath = scriptPath.replace('\\','/');
+outdir=scriptPath+"out/test/"+name;
+resApk=outdir+"/"+name+".apk";
+androidPath = G.oSet.stAndroidJarPath;
+stJavafile = "src/" + packageName.replace('.', '/') + "/" + name+"/MainActivity.java";
+
+G.iScriptResultCode = 0;
+//Aapt
+System.out.println("\n***** Calling Aapt ...");
+G.bshTask.fnPublishProgress("Running Aapt...");
+
+args =  "p -m -J %path%gen -M %path%AndroidManifest.xml -v -S %path%res -I %androidPath% -f -F %resApk%.res";
+args = args.replace("%path%",scriptPath).replace("%androidPath%",androidPath).replace("%resApk%",resApk);
+G.iScriptResultCode = G.ide.fnAapt(args);
+
+if (G.iScriptResultCode>0) 
+{
+    G.bshTask.fnToast("aapt failed!",10000);
+    return;
+}
+
+//Compile
+System.out.println("\n***** Compiling "+stJavafile+" ...");
+G.bshTask.fnPublishProgress("Compiling...");
+
+args = "-verbose -deprecation -extdirs \"\" -1.5 -bootclasspath %androidPath% -classpath %path%src";
+args +=":%path%gen -d "+outdir + " %path%"+stJavafile;
+//args += " -sourcepath "+ pathToExtSource;
+args = args.replace("%path%",scriptPath).replace("%androidPath%",androidPath).replace("%resApk%",resApk);
+G.iScriptResultCode = G.ide.fnCompile(args);
+
+if (G.iScriptResultCode>1) 
+{
+  G.bshTask.fnToast("Compilation failed!",10000);
+  return;
+}
+ G.iScriptResultCode = 0;
+
+//dx 
+G.bshTask.fnPublishProgress("Running dx...");
+    
+System.out.println("\n***** Calling dx ...");
+G.bshTask.fnPublishProgress("Running dx...");
+
+args =  "--dex --output="+outdir+"/classes.dex "+outdir;
+// args += " "+scriptPath+"libs/*.jar";
+G.iScriptResultCode = G.ide.fnDx(args);
+
+if (G.iScriptResultCode>0) 
+{
+   G.bshTask.fnToast("dx failed!",10000);
+   return;
+}
+
+//build apk
+System.out.println("\n***** Calling ApkBuilder ...");
+G.bshTask.fnPublishProgress("Running Apkbuilder...");
+
+args = "%resApk%.unsigned -u -z %resApk%.res -f %outdir%/classes.dex -rf %path%src -rj %path%libs -nf %path%libs";
+args = args.replace("%path%",scriptPath).replace("%outdir%",outdir).replace("%resApk%",resApk);
+G.iScriptResultCode = G.ide.fnApkBuilder(args);
+if (G.iScriptResultCode>0) 
+{
+   G.bshTask.fnToast("apkbuilder failed!",10000);
+   return;
+}
+//sign
+System.out.println("\n***** Calling ZipSigner ...");
+G.bshTask.fnPublishProgress("Running ZipSigner...");
+
+args =  "-M testkey -I "+resApk+".unsigned -O "+resApk;
+G.iScriptResultCode = G.ide.fnSignApk(args);
+System.out.println("G.iScriptResultCode = "+G.iScriptResultCode);
+
+if (G.iScriptResultCode>0) 
+   G.bshTask.fnToast("Signing failed!",10000);
+else 
+   G.bshTask.fnToast("Build succeeded!",10000);
+
