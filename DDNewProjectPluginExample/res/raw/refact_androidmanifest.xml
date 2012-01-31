@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.assoft.DDRefactoringPluginExample"
+  android:versionCode="6"
+  android:versionName="1.1.0"
+>
+  <uses-sdk android:minSdkVersion="5" android:targetSdkVersion="8" />
+  <application android:label="DDRefactoringPluginExample" android:icon="@drawable/icon">
+    <activity android:name="MainActivity"
+      android:label="DDRefactoringPluginExample">
+      <intent-filter>          
+        <action android:name="com.assoft.DroidDevelop.getRefactCommandsNames" /> 
+        <category android:name="android.intent.category.DEFAULT" /> 
+      </intent-filter>
+      <intent-filter>          
+        <action android:name="com.assoft.DroidDevelop.processRefactCommand" /> 
+        <category android:name="android.intent.category.DEFAULT" /> 
+      </intent-filter>
+    </activity>
+  </application>
+</manifest> 
