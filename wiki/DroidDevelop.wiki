@@ -10,6 +10,8 @@ You also can install and your run programm without exit from DroidDevelop. For t
 
 You also can edit your java or another project files without exit from DroidDevelop.
 
+You also can create and install some plugins for DroidDevelop. Now provides two open source plugins by AsSoft: "DDRefactoringPluginExample" and "DDNewProjectPluginExample".
+
 You can also see DroidDevelopPro with syntax Highlight.
 
 [https://market.android.com/details?id=com.assoft.DroidDevelop DroidDevelop download link]
