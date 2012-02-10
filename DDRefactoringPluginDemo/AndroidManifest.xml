@@ -7,7 +7,7 @@
   <uses-sdk android:minSdkVersion="5" android:targetSdkVersion="8" />
   <application android:label="DDRefactoringPluginDemo" android:icon="@drawable/icon">
     <activity android:name="MainActivity"
-      android:label="@string/app_name">
+      android:label="DDRefactoringPluginDemo">
       <intent-filter>          
         <action android:name="com.assoft.DroidDevelop.getRefactCommandsNames" /> 
         <category android:name="android.intent.category.DEFAULT" /> 
