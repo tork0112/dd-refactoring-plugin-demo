@@ -2,6 +2,16 @@
 //	
 name = "DDNewProjectPluginExample";
 packageName="com.assoft";
+androidJarPath = "";
+
+if (G.oSet.stAndroidJarPath.compareTo("") == 0)
+    G.oSet.stAndroidJarPath = androidJarPath;
+if (G.oSet.stAndroidJarPath.compareTo("") == 0)
+{
+  System.out.println("Please setup JavaIDE (Android). Set path to Android.jar file on it.\n" +
+                                    "Note: use full path include Android.jar filename.");
+  return;
+}
 
 scriptPath = dirname(pathToFile(getSourceFileInfo()).getAbsolutePath())+"/";
 scriptPath = scriptPath.replace('\\','/');
