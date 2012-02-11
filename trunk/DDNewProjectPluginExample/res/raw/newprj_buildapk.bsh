@@ -9,7 +9,8 @@ if (G.oSet.stAndroidJarPath.compareTo("") == 0)
 if (G.oSet.stAndroidJarPath.compareTo("") == 0)
 {
   System.out.println("Please setup JavaIDE (Android). Set path to Android.jar file on it.\n" +
-                                    "Note: use full path include Android.jar filename.");
+                                    "Note: use full path include Android.jar filename.\n" +
+                                    "You can download it on the en.assoft.ru/android.jar");
   return;
 }
 

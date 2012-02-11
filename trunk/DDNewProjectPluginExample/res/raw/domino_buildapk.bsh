@@ -1,6 +1,6 @@
 // BeanShell compile script
 //	
-name = "DDRefactoringPluginExample";
+name = "GraphicsExample";
 packageName="com.assoft";
 androidJarPath = "";
 

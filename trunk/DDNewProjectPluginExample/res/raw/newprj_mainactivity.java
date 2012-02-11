@@ -11,7 +11,7 @@ import java.io.*;
 
 public class MainActivity extends Activity
 {  
-  String[] names = {"DDNewProjectPluginExample", "DDRefactoringPluginExample"};
+  String[] names = {"DDNewProjectPluginExample", "DDRefactoringPluginExample", "GraphicsExample"};
   
   private String names2Query()
   {
@@ -69,7 +69,7 @@ public class MainActivity extends Activity
   
   private String processName(String name, Intent intent)
   {
-     String projectPath = "/mnt/storage/sdcard/assoft/examples/" + name;
+     String projectPath = "/mnt/storage/sdcard/assoft/examples/" + name; 
      intent.putExtra("android.intent.extra.ProjectPath", projectPath);
      intent.putExtra("android.intent.extra.ProjectPackage", "com.assoft");
      intent.putExtra("android.intent.extra.ProjectName", name);
@@ -96,17 +96,34 @@ public class MainActivity extends Activity
         forceDirectory(projectPath + "res/raw");   
         copyFileFromRaw(R.raw.newprj_androidmanifest, projectPath + "res/raw/newprj_androidmanifest.xml");
         copyFileFromRaw(R.raw.newprj_mainactivity, projectPath + "res/raw/newprj_mainactivity.java");        
-        copyFileFromRaw(R.raw.newprj_buildapk, projectPath + "res/raw/newprj_buildapk.bsh");                            
+        copyFileFromRaw(R.raw.newprj_buildapk, projectPath + "res/raw/newprj_buildapk.bsh");         
+                           
         copyFileFromRaw(R.raw.refact_androidmanifest, projectPath + "res/raw/refact_androidmanifest.xml");
         copyFileFromRaw(R.raw.refact_mainactivity, projectPath + "res/raw/refact_mainactivity.java");          
-        copyFileFromRaw(R.raw.refact_buildapk, projectPath + "res/raw/refact_buildapk.bsh");                    
+        copyFileFromRaw(R.raw.refact_buildapk, projectPath + "res/raw/refact_buildapk.bsh");              
+
+        copyFileFromRaw(R.raw.domino_androidmanifest, projectPath + "res/raw/domino_androidmanifest.xml");
+        copyFileFromRaw(R.raw.domino_mainactivity, projectPath + "res/raw/domino_mainactivity.java");  
+        copyFileFromRaw(R.raw.domino_desk, projectPath + "res/raw/domino_desk.java");  
+        copyFileFromRaw(R.raw.domino_fishka, projectPath + "res/raw/domino_fishka.java");      
+        copyFileFromRaw(R.raw.domino_buildapk, projectPath + "res/raw/domino_buildapk.bsh");                
+        copyFileFromRaw(R.raw.domino_main_layout, projectPath + "res/raw/domino_main_layout.xml");                        
       }
       else if (name.contentEquals(names[1]))
       {
         copyFileFromRaw(R.raw.refact_androidmanifest, projectPath + "AndroidManifest.xml");
         copyFileFromRaw(R.raw.refact_mainactivity, projectPath + "src/" + pkgPath + name + "/MainActivity.java");      
         copyFileFromRaw(R.raw.refact_buildapk, projectPath + "buildApk.bsh");       
-      }     
+      }  
+      else if (name.contentEquals(names[2]))
+      {
+        copyFileFromRaw(R.raw.domino_androidmanifest, projectPath + "AndroidManifest.xml");
+        copyFileFromRaw(R.raw.domino_mainactivity, projectPath + "src/" + pkgPath + name + "/MainActivity.java");  
+        copyFileFromRaw(R.raw.domino_desk, projectPath + "src/" + pkgPath + name + "/Desk.java");  
+        copyFileFromRaw(R.raw.domino_fishka, projectPath + "src/" + pkgPath + name + "/Fishka.java");      
+        copyFileFromRaw(R.raw.domino_buildapk, projectPath + "buildApk.bsh");             
+        copyFileFromRaw(R.raw.domino_main_layout, projectPath + "res/layout/main.xml");
+      }         
      copyLogoFile(R.drawable.icon, projectPath + "res/drawable-hdpi/icon.png");     
      return "";
   }
