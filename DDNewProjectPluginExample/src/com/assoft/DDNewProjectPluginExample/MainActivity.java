@@ -30,6 +30,12 @@ public class MainActivity extends Activity
      File f = new File(path);
      f.mkdirs();
   }
+   
+  public static Boolean fileExists(String filename)
+  {
+     File f = new File(filename);
+     return f.exists();     
+  }
   
    private void copyFileFromRaw(int resID, String resFile)
    {
@@ -69,7 +75,13 @@ public class MainActivity extends Activity
   
   private String processName(String name, Intent intent)
   {
-     String projectPath = "/mnt/storage/sdcard/assoft/examples/" + name; 
+     String subPath = "/mnt";
+     if (fileExists("/mnt/storage/sdcard"))
+        subPath = "/mnt/storage/sdcard";
+     else if  (fileExists("/mnt/sdcard"))
+        subPath = "/mnt/sdcard";        
+     String projectPath = subPath + "/assoft/examples/" + name; 
+     
      intent.putExtra("android.intent.extra.ProjectPath", projectPath);
      intent.putExtra("android.intent.extra.ProjectPackage", "com.assoft");
      intent.putExtra("android.intent.extra.ProjectName", name);
