@@ -33,7 +33,7 @@ public class MainActivity extends Activity
       intent.putExtra("android.intent.extra.CommandName0", "AddPanel");
       intent.putExtra("android.intent.extra.CommandData0", "Panel1");
       intent.putExtra("android.intent.extra.CommandName1", "AddLastPanelButton");
-      intent.putExtra("android.intent.extra.CommandData1", demoItems[1]);
+      intent.putExtra("android.intent.extra.CommandData1", "hello_world");
       intent.putExtra("android.intent.extra.CommandDataA1", "Hello World!!!");
       intent.putExtra("android.intent.extra.CommandName2", "ShowPanel");
       intent.putExtra("android.intent.extra.CommandData2", "Panel1");                          
