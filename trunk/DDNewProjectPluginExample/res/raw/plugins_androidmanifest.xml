@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.assoft.DDPluginsCreation"
+  android:versionCode="1"
+  android:versionName="1.1.1"
+>
+  <uses-sdk android:minSdkVersion="5" android:targetSdkVersion="8" />
+  <application android:label="DDPluginsCreation" android:icon="@drawable/icon">
+    <activity android:name="MainActivity"
+      android:label="DDPluginsCreation">
+      <intent-filter>
+        <action android:name="com.assoft.DroidDevelop.processCommonPluginCommand" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+      <intent-filter>          
+        <action android:name="com.assoft.DroidDevelop.getCommonPluginCommandsNames" /> 
+        <category android:name="android.intent.category.DEFAULT" /> 
+      </intent-filter>      
+    </activity>
+  </application>
+</manifest> 

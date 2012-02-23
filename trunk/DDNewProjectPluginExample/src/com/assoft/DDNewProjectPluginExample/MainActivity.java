@@ -11,7 +11,7 @@ import java.io.*;
 
 public class MainActivity extends Activity
 {  
-  String[] names = {"DDNewProjectPluginExample", "DDRefactoringPluginExample", "GraphicsExample"};
+  String[] names = {"DDNewProjectPluginExample", "DDRefactoringPluginExample", "GraphicsExample", "DDPluginsCreation"};
   
   private String names2Query()
   {
@@ -120,6 +120,10 @@ public class MainActivity extends Activity
         copyFileFromRaw(R.raw.domino_fishka, projectPath + "res/raw/domino_fishka.java");      
         copyFileFromRaw(R.raw.domino_buildapk, projectPath + "res/raw/domino_buildapk.bsh");                
         copyFileFromRaw(R.raw.domino_main_layout, projectPath + "res/raw/domino_main_layout.xml");                        
+
+        copyFileFromRaw(R.raw.plugins_androidmanifest, projectPath + "res/raw/plugins_androidmanifest.xml");
+        copyFileFromRaw(R.raw.plugins_mainactivity, projectPath + "res/raw/plugins_mainactivity.java");      
+        copyFileFromRaw(R.raw.plugins_buildapk, projectPath +  "res/raw/plugins_buildapk.bsh");       
       }
       else if (name.contentEquals(names[1]))
       {
@@ -135,7 +139,13 @@ public class MainActivity extends Activity
         copyFileFromRaw(R.raw.domino_fishka, projectPath + "src/" + pkgPath + name + "/Fishka.java");      
         copyFileFromRaw(R.raw.domino_buildapk, projectPath + "buildApk.bsh");             
         copyFileFromRaw(R.raw.domino_main_layout, projectPath + "res/layout/main.xml");
-      }         
+      }
+      else if (name.contentEquals(names[3]))
+      {
+        copyFileFromRaw(R.raw.plugins_androidmanifest, projectPath + "AndroidManifest.xml");
+        copyFileFromRaw(R.raw.plugins_mainactivity, projectPath + "src/" + pkgPath + name + "/MainActivity.java");      
+        copyFileFromRaw(R.raw.plugins_buildapk, projectPath + "buildApk.bsh");       
+      }           
      copyLogoFile(R.drawable.icon, projectPath + "res/drawable-hdpi/icon.png");     
      return "";
   }
